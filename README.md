@@ -1,10 +1,15 @@
-# Project 
+This is partial reproduction of the 2011 How Americans (mostly don't) Find an Interracial Partner by Reuben J. Thomas using the How Couples Meet and Stay Together 2009 dataset. 
 
-This a template for a data analysis project.
+This project looks at all the ways interracial couples meet and the demographics of interracial couples themselves: how they met, their age, their race, and their sexual orientation. 
 
-* To create a repo that is a copy, log into GitHub and use the green _Use this template_ button.
-* To create a non-repo, local copy, use _Clone or download_ > _Download ZIP_.
+Looking at how people find partners is an important study into the propagation of cultural and social norms that may deeply encode certain inequalities and segregation through the creation of a family unit. Conclusions pulled from this dataset may create deeper insights into how race and gender boundaries are bridged. 
 
-An explanation of how to use this project organization can be found in [Project workflow](https://dcl-workflow.stanford.edu/project-workflow.html).
+Although Hispanic is an ethnicity, it will be treated as a race due to the increasingly large number of people identifying as only Hispanic and no other race on the US census. 
 
-Here is an [example project](https://github.com/dcl-docs/project-example) based upon this template.
+## Conclusion:
+The general takeaways would be that same-race trends do not predict interracial couples. In fact, they are sometimes so different as to inquire to the social norms defining the such interactions. 
+
+More research should be looked into to find what defines the different social interactions and circles. 
+
+
+For detailed graphs and figures, please look into the Final Report Presentation file. 

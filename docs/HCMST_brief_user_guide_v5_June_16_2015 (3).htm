@@ -1,0 +1,1307 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>A Brief Guide to data sources and variables in the HCMST</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Arial Narrow";
+	panose-1:2 11 6 6 2 2 2 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.bibliotable, li.bibliotable, div.bibliotable
+	{mso-style-name:bibliotable;
+	margin:0in;
+	margin-bottom:.0001pt;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Helvetica","sans-serif";}
+p.readinglisttable, li.readinglisttable, div.readinglisttable
+	{mso-style-name:readinglisttable;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page WordSection1
+	{size:11.0in 8.5in;
+	margin:.5in .7in .5in .7in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>A
+Brief Guide to data sources and variables in the public HCMST, version 5.00</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Revision
+Date: 6/16/2016</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>See
+also the other online documentation, including the Codebook. The Codebook
+contains frequencies of all variables, plus a list of notes attached to each
+variable; notes will be visible from Stata but may not be visible from other
+software programs. Notes identify, among other things, which variables were
+produced by Knowledge Networks (now known as GfK), and which variables were
+produced by the Stanford Research Team. The variables below are only a small
+fraction of the total set of the variables in the public dataset, but enough
+(we hope) to give the user a useful idea of what is in the dataset. Also note:
+this user’s guide is not designed for printing (this guide is much too wide).</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=2028
+ style='width:1521.25pt;border-collapse:collapse'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 valign=bottom style='width:85.9pt;border:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Data Sources</span></b></p>
+   </td>
+   <td width=243 valign=bottom style='width:181.9pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Background Demographic Surveys:</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Knowledge Networks’ Core Adult Profile and Public
+   Affairs Profiles</span></b></p>
+   </td>
+   <td width=326 valign=bottom style='width:244.65pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>How Couples Meet and Stay Together Main Survey</span></b></p>
+   </td>
+   <td width=153 valign=bottom style='width:114.4pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Background Demographic Survey Repeated: Core Adult
+   Profile “pp2”</span></b></p>
+   </td>
+   <td width=139 valign=bottom style='width:104.1pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>How Couples Meet and Stay Together First Follow-Up
+   “Wave 2”</span></b></p>
+   </td>
+   <td width=173 valign=bottom style='width:130.0pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Background Demographic Survey Repeated Again: Core
+   Adult Profile “pp3”</span></b></p>
+   </td>
+   <td width=164 valign=bottom style='width:123.15pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>How Couples Meet and Stay Together Second Follow-up
+   “Wave 3”</span></b></p>
+   </td>
+   <td width=194 valign=bottom style='width:145.35pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Backround demographic survey repeated again: core
+   adult profile “pp4”</span></b></p>
+   </td>
+   <td width=159 valign=bottom style='width:119.6pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>how couples meet and stay together third follow-up
+   “wave 4”</span></b></p>
+   </td>
+   <td width=170 valign=bottom style='width:127.55pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Backround demographic survey repeated again: core
+   adult profile “pp5”</span></b></p>
+   </td>
+   <td width=193 valign=bottom style='width:144.65pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>how couples meet and stay together Fourth
+   follow-up “wave 5”</span></b></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 valign=bottom style='width:85.9pt;border:solid windowtext 1.0pt;
+   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Order Data Was Gathered</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>3</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>4</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>5</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>6</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>7</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>8</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>9</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>10</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Sampling Frame, Theoretical</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States who had either a spouse or a
+   romantic partner at time of main survey</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States who had either a spouse or a
+   romantic partner in 2009</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States who were still partnered with a
+   spouse or a romantic partner from 2009</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States who were still partnered with a
+   spouse or a romantic partner from 2009</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>English
+   Literate Adults living in the United States who were still partnered with a
+   spouse or a romantic partner from 2009</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Sampling Frame, Actual</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Members
+   of Knowledge Networks’ Nationally Representative Survey Panel</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Members
+   of Knowledge Networks’ Nationally Representative Survey Panel</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>The
+   4,002 original survey respondents (survey firm Knowledge Networks continues
+   to gather data on subjects whether they were partnered or not)</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>The
+   3,009 survey respondents who were partnered at the time of the main survey
+   (the HCMST follow-up surveys only follow subjects who were partnered at the
+   time of the main survey in 2009)</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>The
+   4,002 original survey respondents</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;The
+   3,009 survey respondents who were partnered at the time of the main survey
+   [minus the respondents who reported having broken up with their partner, or
+   partner passed away by Wave 2]</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>The
+   4,002 original survey respondents</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;The
+   3,009 survey respondents who were partnered at the time of the main survey
+   [minus the respondents who reported having broken up with their partner, or
+   partner passed away by Wave 3]</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>The
+   4,002 original survey respondents</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;The
+   3,009 survey respondents who were partnered at the time of the main survey
+   [minus the respondents who reported having broken up with their partner, or
+   partner passed away by Wave 4]</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>How many Cases are Covered by This Data Source</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>4,002</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>3,009/4,002</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>3,693/4,002</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2,520/3,009</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2,644/4,002</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,960/3,009</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2,035/4,002</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,536/3,009</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,423/4,002</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,1/27/3,009</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Response Rate</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>4,002/4,002=100%
+   since completion of the background demographic surveys was necessary for
+   subjects to join the KN panel. Earlier parts of the response rate can be
+   estimated: 32.6% of people initially contacted by phone agreed to join the
+   KN panel, and of these 56.8% completed the KN Core Adult Survey, estimates
+   from Callegaro and DiSogra 2008&nbsp; “Computing Response Metric for Online
+   Panels,” <i>Public Opinion Quarterly</i> 72: 1008-1032</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>71%</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>3,693/4,002=92.3%</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2,520/2,981=84.5%</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>[denominator
+   excludes 28 cases who were determined to be ineligible based on main survey
+   answers]</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2,644/4,002=66%</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,960/2,689=72.9%</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>[denominator
+   excludes previous break-ups and other ineligibles]</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2,035/4,002=50.9%</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,536/2,557=60.0%</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>[denominator
+   excludes previous break-ups and other ineligibles]</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,423/4,002=36%</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>[counting
+   subjects in the numerator for whom pp5 is newer, see pp5_newer]</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1,127/2,444=46%</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>[denominator
+   excludes previous break-ups and other ineligibles]</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Dates During Which Data was Gathered</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Core
+   Adult Profile:</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   6/30/2003</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   11/2/2007</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   3/20/2009</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Public
+   Affairs Profile:</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   5/21/2005</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   9/25/2007</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   10/19/2008</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:2/21/2009</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:2/23/2009</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   4/3/2009</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   3/29/2009</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   4/23/2009</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   3/4/2010</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   3/12/2010</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   3/18/2010</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   6/8/2010</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   3/7/2010</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   7/2/2011</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   9/12/2011</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   3/22/2011</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   4/8/2011</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   8/29/2011</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   9/15/2011</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   5/9/2013</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   11/6/2013</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   3/2013</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   3/2013</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   11/2013 </span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:
+   12/2013</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   5/2014</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   12/2014</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Earliest:11/2014</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Median:
+   12/2014</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Latest:
+   3/2015</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Order of variables in the Public Dataset</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>1</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>2</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>3</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>4</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>5</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>6</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>In Wave 4
+   supplement</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>In Wave 4
+   supplement</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>in Wave 5
+   supplement</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal align=center style='text-align:center'><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>in Wave 5
+   supplement</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Associated Variable Prefixes</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp
+   and</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pap</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>s#
+   and q# for variables from HCMST main survey; plus many other variables
+   without prefixes derived from these. </span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w2_</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_</span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w3_</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp4_</span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w4_</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp5_</span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w5_</span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Range of Variables, in Order in the dataset</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>ppage</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'> to </span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pphhcomp11_member15_relationship</span></b></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>irb_consent
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>to</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>coresident</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Also
+   note that grouped among the HCMST main survey variables are some variables
+   relating to respondent’s race, religion, or sexual orientation that are
+   based on the background demographic surveys, but are grouped here to be
+   proximate to the same variables for respondent’s partner.</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_afterp1
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>to
+   <b>pp2_ppcmdate_yrmo</b></span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w2_deceased
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>to
+   <b>w2_days_elapsed</b></span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_pphhhead
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>to
+   <b>pp3_newer</b></span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w2w3_combo_breakup
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>to<b>
+   w3_nonmbtiming_month</b></span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp4_ppeduc-</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>ppa2009_how_often_services</span></b></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w4_xqualified-</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w234_combo_breakup</span></b></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp5_ppage-
+   pp5_ppnet</span></b></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w5_duration-
+   w5_HCMST_interview_fin_yrmo</span></b></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 valign=top style='width:85.9pt;border:solid windowtext 1.0pt;
+   border-top:none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Some Key Variables</span></b></p>
+   </td>
+   <td width=243 valign=top style='width:181.9pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   ppppcmdate_yrmo </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(year
+   and month member completed Core Adult Profile)</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   pppadate_yrmo </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(year
+   and month member completed Public Affairs Profile)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Note
+   that the background survey data applies only to the Respondent, not to
+   Respondent’s Partner. The HCMST main survey supplies variables for the
+   demographic background of Respondent’s Partner.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>ppage</b> (age incremented to yield age at the time respondent completed
+   the HCMST main survey)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>ppgender </b>(respondent’s gender)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   Information about up to 14 household members in addition to the respondent,
+   numbered 2-15.</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pphhcomp11_member#_age</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pphhcomp11_member#_gender</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pphhcomp11_member#_relationship</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>children_in_hh </b>(number of minors in respondent’s household)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>ppmarit</b> Marital status</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   ppincimp, hhinc</b> Household income (the latter is a recode of the former).</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>ppwork</b> (employment status)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>ppeducat, ppeduc </b>(educational attainment); see also <b>respondent_yrsed,
+   </b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>respondent_race </b>based on<b> ppq14arace, pphispan, pprace_*</b>
+   &nbsp;(race), <b>ppethm</b>. </span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>papreligion, papevangelical</b> (religion)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   pppartyid3</b> (political party affiliation)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;*<b>ppnet</b>
+   (whether respondent had their own Internet access at home at the time of the
+   pp survey. Note: most of the “no” households had Internet access provided by
+   KN)</span></p>
+   </td>
+   <td width=326 valign=top style='width:244.65pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   HCM_main_interview_yrmo </span></b><span style='font-size:11.0pt;font-family:
+   "Arial Narrow","sans-serif"'>The year and month respondent finished the
+   HCMST main survey<b> </b></span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   qflag</span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>
+   identifies the 3,009 partnered respondents. The remaining 993 respondents
+   did not have a spouse or partner at the time of the main survey.</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   recsource </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>identifies
+   the oversampled GLB respondents</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   papglb_status </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Identifies
+   every respondent’s prior GLB status</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   weight1 </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Main
+   weight for all respondents</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   weight2 </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Main
+   weight for partnered respondents</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   respondent_race, partner_race</b></span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   ppage </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(respondent
+   age); <b>q9</b> (partner age)</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   HCMST identifies not only respondent and partners’ current religions, but
+   also the religion each was raised in, see: <b>respondent_religion_at_16,
+   respondent_relig_16_cat, partner_religion_at_16, partner_relig_16_cat</b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>which
+   are derived from<b> q8a, q8b, q8b_other; q13a, q13b, q13b_other</b> </span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   respondent_yrsed, partner_yrsed</b> Educational attainment of respondent and
+   educational attainment of current partner</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   respondent_mom_yrsed partner_mom_yrsed</span></b><span style='font-size:
+   11.0pt;font-family:"Arial Narrow","sans-serif"'> respondent’s mother and
+   partner’s mother’s educational attainment</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*How,
+   when, and through whom respondent and current partner first met, including:</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>q24_met_online, q32, q32_internet, how_met_online, either_internet,
+   either_internet_adjusted</b> (several measures of whether and how respondent
+   met partner Online).</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   q24_* </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>represent
+   a variety of variables derived from the open-text question q24, “How Did You
+   Meet your Spouse/Partner?” See online documentation “Notes on Coding of Open
+   Text Q24” </span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   The how did you meet variables indicate whether the person responsible for
+   bringing respondent and partner together (for instance, a “friend”) was
+   respondent’s friend, partner’s friend, or the friend of some other
+   intermediary. See</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>q24_R_friend,
+   &nbsp;q24_P_friend, &nbsp;q24_btwn_I_friend</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>New
+   to version 3.0 of the public data, <b>q24_fam_*</b> variables specify which
+   family members played the intermediary role</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*Timing
+   of first meeting, beginning of relationship, first cohabitation, first
+   marriage, and/or first domestic partnership with current partner. See <b>q21*</b>
+   as well as:</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   how_long_ago_first_met </b>is years elapsed since respondent first met
+   partner</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>how_long_relationship </b>is current relationship duration</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+   font-family:"Arial Narrow","sans-serif"'>*<b> q17c, q17d, gender_attraction</b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;(Sexual
+   preference)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>same_sex_couple</b> (whether couple is a same-sex couple)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   for Partner’s gender, see <b>q4, q4_other, q5</b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>q12</b> (Partner’s political party affiliation), see also <b>pppartyid3</b>
+   (Respondent’s political party affiliation)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   q15a1</b> and <b>q15a2 </b>(where Respondent was raised)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   distancemoved_10mi</b> Geographic mobility of respondent</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>parental_approval</b> Parental approval or disapproval of respondent’s
+   relationship with partner</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   relationship_quality</b> Respondent’s assessment of relationship quality
+   with partner</span></p>
+   </td>
+   <td width=153 valign=top style='width:114.4pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   pp2_afterp1 </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>identifies
+   the 3,693 cases who took the KN Core Adult Profile a second time.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   pp2_ppcmdate_yrmo </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>year
+   and month of second Core Adult Profile</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>plus
+   all the relevant variables from Core Adult Survey for which new data would
+   be interesting, such as:</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_ppmarit,
+   pp2_ppincimp, </span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_ppwork,
+   </span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_ppnet</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>and
+   (new to version 3.0 of the public data) some background variables that you
+   might not expect to change, but where the changes might be interesting, such
+   as: </span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_ppethm
+   (race)</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp2_ppeduc</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(Note:
+   unless otherwise noted, all Stanford-produced supplementary race, and
+   education variables are derived from the original pp* variables because the
+   first Core Adult Survey had the fewest missing values)</span></p>
+   </td>
+   <td width=139 valign=top style='width:104.1pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   w2_assigned </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(indicates
+   which of the 3,009 partnered respondents from Wave I were attempted for the
+   first follow-up survey)</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   w2_f1complete </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(indicates
+   the 2,520 respondents who completed the first follow-up survey)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>&nbsp;w2_deceased, w2_multiname, w2_donotcontact </b>(indicate various
+   reasons why partnered respondents from the main survey might not have been
+   assigned for the follow-up survey)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>&nbsp;w2_broke_up </b>(indicates whether respondent is still partnered
+   with their partner from the main survey, or not) </span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w2_x*</b> are questions derived from earlier waves that were used to
+   route respondents to the proper branch of the Wave 2 questionnaire; see Wave
+   2 survey instrument.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   The actual questions that respondents saw are</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w2_q1</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>- <b>w2_q10</b></span></p>
+   </td>
+   <td width=173 valign=top style='width:130.0pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   pp3_newer</span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>
+   identifies the 2,644 cases who took the KN Core Adult Profile a third time. </span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   pp3_ppcmdate_yrmo</span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>
+   year and month of third Core Adult Profile</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>plus
+   all the relevant variables from Core Adult Survey for which new data would
+   be interesting, such as:</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_ppmarit,
+   pp3_ppincimp, </span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_ppwork,
+   </span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_ppnet</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>and&nbsp;
+   (new to version 3.0 of the public data) some background variables that you might
+   not expect to change, but where the changes might be interesting, such as: </span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_ppethm
+   (race)</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>pp3_ppeduc</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>(Note:
+   unless otherwise noted, all Stanford-produced supplementary race and
+   education variables are derived from the original pp* variables because the
+   first Core Adult Survey had the fewest missing values)</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   interstate_mover_pp1_pp2, interstate_mover_pp2_pp3</b>,<b> </b>and <b>interstate_mover_pp1_pp3</b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>record
+   whether the subject lived in a different state at the time of the different
+   core adult surveys.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   </td>
+   <td width=164 valign=top style='width:123.15pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*w3_xqualified</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'> identifies
+   the 2,689 subjects who were qualified to take Wave 3, on account of not
+   having previously broken up with partner, and partner not previously
+   reported as deceased.</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w3_xpartnered,
+   w3_xdeceased, </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>and
+   <b>w3_multiname</b> explain which cases were qualified for Wave 3.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w3_complete</b> indicates the 1,960 cases who completed Wave 3.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*<b>
+   w3_broke_up</b> indicates which cases newly reported breakup in Wave 3. </span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w2w3_combo_breakup</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'> indicates
+   which cases were broken up or lost to follow-up across waves 2 and 3.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w3_x*</b> are questions derived from earlier waves that were used to
+   route respondents to the proper branch of the Wave 2 questionnaire; see Wave
+   2 survey instrument.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   The actual questions that respondents saw are</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w3_q1</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>- <b>w3_q10,
+   </b>questions which are the same as the Wave 2 questions.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   Wave 3 asked additional questions (not asked in Wave 2) of all newly
+   reported break-ups, to determine year and month of the breakup, see:</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>w3_mbtiming_year
+   w3_mbtiming_month</span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>
+   for married couples, and<b> w3_nonmbtiming_year w3_nonmbtiming_month</b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>for
+   unmarried couples.</span></p>
+   </td>
+   <td width=194 valign=top style='width:145.35pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*pp4_newer</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'> identifies
+   the 2,035 subjects whose pp4 variables represent new information. Note that
+   even if pp4_ values are not newer, the pp4 variables hold the earlier pp
+   values (i.e., repeats of pp3 or pp2 values if pp4 is not newer information).</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></b></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></b></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>In
+   addition to the pp4 variables that repeat the pp3, pp2, and pp variables, we
+   added a new retrospective 2009 religiosity variable, </span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>ppa2009_how_often_services,
+   </span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>with
+   its own date collected variable, <b>ppa2009_services_yrmo</b></span></p>
+   </td>
+   <td width=159 valign=top style='width:119.6pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w4_xqualified</b> identifies the subjects who were qualified for Wave 4.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w4_x*</b> are the variables that were used to determine what Wave 4
+   questions the subjects would see.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>In
+   addition to the w4 variables that repeat w3 and w2 questions, there are some
+   new questions:</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   w4_attractive</span></b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>
+   and </span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   w4_attractive_partner</span></b><span style='font-size:11.0pt;font-family:
+   "Arial Narrow","sans-serif"'> include the subject’s rating of their own and
+   their partner’s attractiveness.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>Also,
+   we have a Wave 4 repeat of the Wave 1 relationship quality question,</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   w4_quality</span></b></p>
+   </td>
+   <td width=170 valign=top style='width:127.55pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*pp5_newer</span></b><span
+   style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'> identifies
+   the 1,423 subjects whose pp5 variables represent new information. Note that
+   even if pp5_ values are not newer, the pp5 variables hold the earlier pp
+   values (i.e., repeats of pp4 or pp3 values if pp5 is not newer information).</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>The
+   wave 5 supplement also includes all the instances of the background variable
+   “ppmarit”, or marital status, that were recorded between 2009 and early
+   2015, stored in <b>ppmarit_year</b> variable names. These ppmarit variables
+   replicate some of the previous ppmarit variables that were recorded in
+   pp2-pp4, but also include background values of ppmarit for years not
+   previously available.</span></p>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></b></p>
+   </td>
+   <td width=193 valign=top style='width:144.65pt;border-top:none;border-left:
+   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w5_xqualified</b> identifies the subjects who were qualified for Wave 5.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w5_x*</b> are the variables that were used to determine what Wave 5
+   questions the subjects would see.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>In
+   addition to the w5 variables that repeat questions from prior waves, there
+   are some new questions:</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w5_sex_frequency</b>, sexual frequency in the past year with parther.</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w5_p_monogamy</b>, expectation of monogamy with partner</span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w5_identity</b>, asked for the first time since the first public affairs
+   profile, see wave 1’s variable <b>papglb_status</b></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>*
+   <b>w5_outness</b>, i.e. whether identity is shared with others, for GLB
+   adults identified in <b>w5_identity</b></span></p>
+   </td>
+  </tr>
+  <tr style='page-break-inside:avoid'>
+   <td width=115 style='width:85.9pt;border:solid windowtext 1.0pt;border-top:
+   none;padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif";
+   text-transform:uppercase'>Questionnaire Codebook posted online</span></b></p>
+   </td>
+   <td width=243 style='width:181.9pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   <span class=apple-style-span><span style='font-family:"Arial Narrow","sans-serif";
+   color:#333333'><a
+   href="http://www.stanford.edu/~mrosenfe/how_meet_public/KN_prior_demographic_questionnaires.pdf"
+   target="_blank"><span style='color:#820000'>Questions from Knowledge
+   Networks’ prior demographic surveys</span></a> </span></span></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   </td>
+   <td width=326 style='width:244.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   Main Survey Instrument Wave I</span></p>
+   </td>
+   <td width=153 style='width:114.4pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   <span class=apple-style-span><span style='font-family:"Arial Narrow","sans-serif";
+   color:#333333'><a
+   href="http://www.stanford.edu/~mrosenfe/how_meet_public/KN_prior_demographic_questionnaires.pdf"
+   target="_blank"><span style='color:#820000'>Questions from Knowledge
+   Networks’ prior demographic surveys</span></a> </span></span></span></p>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>&nbsp;</span></p>
+   </td>
+   <td width=139 style='width:104.1pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:4.3pt 4.3pt 4.3pt 4.3pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   Survey Instrument Wave 2.</span></p>
+   </td>
+   <td width=173 style='width:130.0pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   <span class=apple-style-span><span style='font-family:"Arial Narrow","sans-serif";
+   color:#333333'><a
+   href="http://www.stanford.edu/~mrosenfe/how_meet_public/KN_prior_demographic_questionnaires.pdf"
+   target="_blank"><span style='color:#820000'>Questions from Knowledge
+   Networks’ prior demographic surveys</span></a></span></span></span></p>
+   </td>
+   <td width=164 style='width:123.15pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   Survey Instrument Wave 3.</span></p>
+   </td>
+   <td width=194 style='width:145.35pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   <span class=apple-style-span><span style='font-family:"Arial Narrow","sans-serif";
+   color:#333333'><a
+   href="http://www.stanford.edu/~mrosenfe/how_meet_public/KN_prior_demographic_questionnaires.pdf"
+   target="_blank"><span style='color:#820000'>Questions from Knowledge
+   Networks’ prior demographic surveys</span></a></span></span></span></p>
+   </td>
+   <td width=159 style='width:119.6pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   Survey Instrument Wave 4.</span></p>
+   </td>
+   <td width=170 style='width:127.55pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   <span class=apple-style-span><span style='font-family:"Arial Narrow","sans-serif";
+   color:#333333'><a
+   href="http://www.stanford.edu/~mrosenfe/how_meet_public/KN_prior_demographic_questionnaires.pdf"
+   target="_blank"><span style='color:#820000'>Questions from Knowledge
+   Networks’ prior demographic surveys</span></a></span></span></span></p>
+   </td>
+   <td width=193 style='width:144.65pt;border-top:none;border-left:none;
+   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+   padding:1.45pt 1.45pt 1.45pt 1.45pt'>
+   <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial Narrow","sans-serif"'>See
+   Survey Instrument Wave 5.</span></p>
+   </td>
+  </tr>
+ </thead>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

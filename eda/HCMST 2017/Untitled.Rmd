@@ -1,0 +1,272 @@
+---
+title: Basic Demographics 2017
+author: 
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+
+library(haven)
+
+# Parameters
+file_raw <- "/Users/angel/GitHub/dcl-2020-01/angela/c01-own/data/hcmst_2017.rds"
+
+
+recode_respondent_race <-
+  c(
+    "White, Non-Hispanic" = "NH White", 
+    "Black, Non-Hispanic" = "NH Black", 
+  )
+  
+  
+  
+recode_partner_race <-
+  c(
+    "white" = "NH White" 
+  )
+#===============================================================================
+
+# Code
+```
+
+## Data in its full glory
+
+```{r}
+#as_factor is the haven version
+
+data_meet_2017 <-
+  file_raw %>% 
+  read_dta() %>% 
+  mutate_if(is.labelled, as_factor) 
+
+glimpse(data_meet)
+
+```
+
+```{r}
+data_meet_2017 %>% 
+  select(
+    partner_race = Q6B, 
+    respondent_race = ppethm,
+     qflag
+  ) %>% 
+  filter(
+   qflag != "Not Qualified", 
+   !is.na(partner_race), 
+   !is.na(respondent_race)
+  ) %>% 
+  summary()
+```
+
+
+```{r}
+data_meet_2017 %>%
+  filter(
+   qflag != "Not Qualified"
+  ) %>% 
+  select(
+    hispanic1 = Q6A, 
+    hispanic2 = Q6A_2,
+    partner_race = Q6B, 
+    respondent_race = ppethm
+    # Race_1:Race_6, 
+  ) %>% 
+  mutate(
+    
+  )
+```
+
+
+```{r}
+data_meet_2017 %>% 
+  select(
+    partner_race = Q6B, 
+    respondent_race = ppethm, 
+    white = Race_1, 
+    black = Race_2, 
+    American_Indian = Race_3, 
+    Asian = Race_4, 
+    Native_Hawaiian = Race_5, 
+    Other = Race_6, 
+    qflag
+  ) %>% 
+  filter(
+   qflag != "Not Qualified", 
+   !is.na(partner_race), 
+   !is.na(respondent_race)
+  ) %>% 
+    pivot_longer(
+      cols = c(white, black, American_Indian, Asian, Native_Hawaiian, Other), 
+      values_to = "Value", 
+      names_to = "Race"
+    
+  )
+```
+
+
+# Different race couples, all distinct without NAs
+```{r}
+#Total: 512
+
+data_meet_2017 %>% 
+  select(
+    partner_race = Q6B, 
+    respondent_race = ppethm
+  ) %>% 
+  drop_na(partner_race) %>% 
+   mutate(
+    respondent_race = recode(respondent_race, !!! recode_respondent_race), 
+    partner_race = recode(partner_race, !!! recode_partner_race),  
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  filter(
+    respondent_race != partner_race, 
+    qflag != "no spouse or partner or otherwise unqualified"
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, sort = TRUE)
+
+```
+
+## Interracial Same-Sex Couples
+
+
+```{r}
+# papglb_status: if respondent is gay, lesbian, or bisexual 
+
+#Total: 114
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race != partner_race, 
+    same_sex_couple != "different sex couple"
+  ) %>%
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, sort = TRUE)
+  
+```
+
+# Interracial Different-Sex Couples
+
+
+```{r}
+#398 total. 
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race != partner_race, 
+     same_sex_couple == "different sex couple"
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, sort = TRUE)
+```
+
+
+# Intraracial Couples
+
+
+```{r}
+
+#3009 total. 
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race == partner_race
+  ) %>% 
+   mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, sort = TRUE)
+  
+```
+
+## Intraracial Different-Sex Couples
+
+
+```{r}
+#2218 total. 
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race == partner_race, 
+    same_sex_couple == "different sex couple"
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, sort = TRUE)
+  
+```
+
+## Intraracial Same-Sex Couples
+
+
+```{r}
+#358 total. 
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race == partner_race, 
+     same_sex_couple != "different sex couple"
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, sort = TRUE)
+  
+```

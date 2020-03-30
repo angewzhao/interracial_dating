@@ -1,0 +1,379 @@
+---
+title: 
+author: 
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+
+library(haven)
+
+# Parameters
+file_raw <- "/Users/angel/GitHub/dcl-2020-01/angela/c01-own/data/hcmst.rds"
+#===============================================================================
+
+# Code
+```
+
+## Read in Data
+
+```{r}
+#as_factor is the haven version
+
+data_meet <-
+  file_raw %>% 
+  read_dta() %>% 
+  mutate_if(is.labelled, as_factor) 
+
+```
+
+
+```{r}
+pairs_wanted <-
+  data_meet %>% 
+  filter(
+    respondent_race != partner_race, 
+    qflag != "no spouse or partner or otherwise unqualified", 
+    !is.na(respondent_race), 
+    !is.na(partner_race)
+  ) %>% 
+  select(
+    respondent_race,
+    partner_race,
+    weight2, 
+  ) %>%
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  count(distinct_pair, wt = weight2) %>% 
+  mutate(
+    prop = n / sum(n)
+  ) %>% 
+  filter(prop >= 0.05) %>% 
+  count(distinct_pair) %>% 
+  pull(distinct_pair)
+  
+```
+
+```{r}
+data_meet_work <-
+  data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    !is.na(respondent_race), 
+    !is.na(partner_race)
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  filter(distinct_pair %in% pairs_wanted) %>%
+  rename(
+    r_gender = ppgender
+  ) %>%  
+  mutate(
+      r_gender = recode_factor(r_gender, "female" = "F","male" = "M"), 
+    p_gender = case_when(
+      r_gender == "F" & same_sex_couple == "same-sex couple" ~ "F", 
+      r_gender == "M" & same_sex_couple == "same-sex couple" ~ "M",
+      r_gender == "F" & same_sex_couple == "different sex couple" ~ "M",
+      r_gender == "M" & same_sex_couple == "different sex couple" ~ "F",
+    ), 
+    respondent = str_c(respondent_race, "(", r_gender, ")"), 
+    partner = str_c(partner_race,"(", p_gender, ")"), 
+    distinct_pair_gender = 
+      str_c(
+        pmin(as.character(respondent), as.character(partner)), 
+        "-", 
+        pmax(as.character(respondent), as.character(partner))
+      )
+  ) 
+
+```
+```{r}
+data_meet_work_intraracial <-
+  data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    !is.na(respondent_race), 
+    !is.na(partner_race)
+  ) %>% 
+  filter(respondent_race == partner_race) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  rename(
+    r_gender = ppgender
+  ) %>%  
+  mutate(
+      r_gender = recode_factor(r_gender, "female" = "F","male" = "M"), 
+    p_gender = case_when(
+      r_gender == "F" & same_sex_couple == "same-sex couple" ~ "F", 
+      r_gender == "M" & same_sex_couple == "same-sex couple" ~ "M",
+      r_gender == "F" & same_sex_couple == "different sex couple" ~ "M",
+      r_gender == "M" & same_sex_couple == "different sex couple" ~ "F",
+    ), 
+    respondent = str_c(respondent_race, "(", r_gender, ")"), 
+    partner = str_c(partner_race,"(", p_gender, ")"), 
+    distinct_pair_gender = 
+      str_c(
+        pmin(as.character(respondent), as.character(partner)), 
+        "-", 
+        pmax(as.character(respondent), as.character(partner))
+      )
+  )
+
+```
+
+
+## Interracial meet overall total
+
+```{r}
+data_meet_work %>% 
+  select(
+    respondent_race, 
+    partner_race, distinct_pair, 
+    q24_school:q24_bar_restaurant, 
+    friends = met_through_friends, 
+    family = met_through_family,
+    coworkers = met_through_as_coworkers, 
+    internet = q24_met_online
+  ) %>% 
+  filter(respondent_race != partner_race) %>% 
+  mutate(
+    coworkers = as.character(coworkers), 
+    friends = 
+      recode_factor(
+        friends, 
+        "not met through friends" = "No", 
+        "met through friends" = "Yes", 
+        .default = NA_character_
+      ),
+    family = 
+      recode_factor(
+        family, 
+        "not met through family" = "No", 
+        "met through family" = "Yes",
+        .default = NA_character_
+      ), 
+    coworkers = 
+      recode_factor(
+        coworkers, 
+        "0" = "No", 
+        "1" = "Yes", 
+        .default = NA_character_
+      ), 
+    internet = 
+      recode_factor(
+        internet, 
+        "met online" = "Yes", 
+        "met offline" = "No", 
+        .default = NA_character_
+      )
+    
+  ) %>% 
+  pivot_longer(
+    cols = q24_school:internet, 
+    values_to = "how_they_met", 
+    names_to = "where_they_met"
+  ) %>% 
+  mutate(
+    where_they_met = str_replace(where_they_met, ".(\\d){2}_", "")
+  ) %>% 
+  filter(how_they_met == "Yes") %>% 
+  count(where_they_met) %>% 
+  mutate(
+    prop = n / sum(n)
+  ) %>% 
+  ggplot(aes(x = fct_reorder(where_they_met, prop), y = prop)) +
+  geom_col()
+```
+
+
+### Interracial Meet through Categories
+
+```{r}
+data_meet_work %>% 
+  select(
+    respondent_race, 
+    partner_race, distinct_pair, 
+    q24_school:q24_bar_restaurant, 
+    friends = met_through_friends, 
+    family = met_through_family,
+    coworkers = met_through_as_coworkers, 
+    internet = q24_met_online
+  ) %>% 
+  filter(respondent_race != partner_race) %>% 
+  mutate(
+    coworkers = as.character(coworkers), 
+    friends = 
+      recode_factor(
+        friends, 
+        "not met through friends" = "No", 
+        "met through friends" = "Yes", 
+        .default = NA_character_
+      ),
+    family = 
+      recode_factor(
+        family, 
+        "not met through family" = "No", 
+        "met through family" = "Yes",
+        .default = NA_character_
+      ), 
+    coworkers = 
+      recode_factor(
+        coworkers, 
+        "0" = "No", 
+        "1" = "Yes", 
+        .default = NA_character_
+      ), 
+    internet = 
+      recode_factor(
+        internet, 
+        "met online" = "Yes", 
+        "met offline" = "No", 
+        .default = NA_character_
+      )
+    
+  ) %>% 
+  pivot_longer(
+    cols = q24_school:internet, 
+    values_to = "how_they_met", 
+    names_to = "where_they_met"
+  ) %>% 
+  mutate(
+    where_they_met = str_replace(where_they_met, ".(\\d){2}_", "")
+  ) %>% 
+  filter(how_they_met == "Yes") %>% 
+  mutate(
+    type_of_meeting = 
+      case_when(
+        where_they_met %in% 
+          c("friends", "coworkers", "family") ~ 
+          (type_of_meeting = "transitive"),
+        where_they_met %in% 
+          c("vol_org", "school", "military", "college", "church") ~ 
+          (type_of_meeting = "institutional"),
+        where_they_met %in% c("internet", "customer", "bar_restaurant") ~ 
+          (type_of_meeting = "non_exclusive")
+          
+      )
+  ) %>% 
+  count(type_of_meeting, distinct_pair) %>% 
+  group_by(distinct_pair) %>% 
+  mutate(
+    prop = n / sum(n)
+  ) %>% 
+  ggplot(aes(fct_reorder(distinct_pair, prop), prop, fill = distinct_pair)) + 
+  geom_col() +
+  facet_grid(vars(type_of_meeting)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+```
+
+
+## Section 2
+
+```{r}
+data_meet_work_intraracial %>% 
+  select(
+    respondent_race, 
+    partner_race, 
+    distinct_pair_gender, 
+    q24_school:q24_bar_restaurant, 
+    friends = met_through_friends, 
+    family = met_through_family,
+    coworkers = met_through_as_coworkers, 
+    internet = q24_met_online
+  ) %>% 
+  mutate(
+    coworkers = as.character(coworkers), 
+    friends = 
+      recode_factor(
+        friends, 
+        "not met through friends" = "No", 
+        "met through friends" = "Yes", 
+        .default = NA_character_
+      ),
+    family = 
+      recode_factor(
+        family, 
+        "not met through family" = "No", 
+        "met through family" = "Yes",
+        .default = NA_character_
+      ), 
+    coworkers = 
+      recode_factor(
+        coworkers, 
+        "0" = "No", 
+        "1" = "Yes", 
+        .default = NA_character_
+      ), 
+    internet = 
+      recode_factor(
+        internet, 
+        "met online" = "Yes", 
+        "met offline" = "No", 
+        .default = NA_character_
+      )
+  ) %>% 
+  pivot_longer(
+    cols = q24_school:internet, 
+    values_to = "how_they_met", 
+    names_to = "where_they_met"
+  ) %>% 
+  mutate(
+    where_they_met = str_replace(where_they_met, ".(\\d){2}_", "")
+  ) %>% 
+  filter(how_they_met == "Yes") %>% 
+  mutate(
+    type_of_meeting = 
+      case_when(
+        where_they_met %in% 
+          c("friends", "coworkers", "family") ~ 
+          (type_of_meeting = "transitive"),
+        where_they_met %in% 
+          c("vol_org", "school", "military", "college", "church") ~ 
+          (type_of_meeting = "institutional"),
+        where_they_met %in% c("internet", "customer", "bar_restaurant") ~ 
+          (type_of_meeting = "non_exclusive")
+          
+      )
+  ) %>%
+  group_by(distinct_pair_gender) %>%
+  filter(n() > 9) %>% 
+  count(type_of_meeting, distinct_pair_gender) %>% 
+  group_by(distinct_pair_gender) %>% 
+  mutate(
+    prop = n / sum(n)
+  ) %>% 
+  ggplot(aes(fct_reorder(distinct_pair_gender, prop), prop, fill = distinct_pair_gender)) + 
+  geom_col() +
+  facet_grid(vars(type_of_meeting)) +
+  theme(axis.text.x = element_text(angle = -45, hjust = 0))
+```
+

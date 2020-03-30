@@ -1,0 +1,168 @@
+---
+title: Basic Demographics
+author: Angela Zhao 
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+
+library(haven)
+
+# Parameters
+file_raw <-
+  "/Users/angel/GitHub/interracial_dating/data/hcmst_2009.rds"
+
+recode_race <-
+  c(
+    "Hispanic" = "H", 
+    "NH white" = "W", 
+    " NH black" = "B", 
+    " NH Amer Indian" = "AI", 
+    " NH Asian Pac Islander" = "API", 
+    " NH Other" = "Other"
+  )
+#===============================================================================
+
+
+```
+
+
+## Cleaning data
+
+```{r}
+#as_factor is the haven version
+
+data_meet <-
+  file_raw %>% 
+  read_dta() %>% 
+  mutate_if(is.labelled, as_factor) %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    !is.na(respondent_race), 
+    !is.na(partner_race)
+  ) %>% 
+  mutate_at(vars(respondent_race, partner_race), recode, !!! recode_race) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  )
+
+```
+
+
+```{r}
+plot_demographics <- function(...) {
+  data_meet %>% 
+  filter(...) %>% 
+  count(distinct_pair, sort = TRUE) %>% 
+  ggplot(aes(fct_reorder(distinct_pair, n), n)) +
+  geom_col() + 
+  theme(axis.text.x = element_text(angle = -45, hjust = 0)) 
+}
+```
+
+# Different race couples, all distinct without NAs
+```{r}
+#Total: 512
+
+plot_demographics(respondent_race != partner_race) +
+  labs(
+    title = "Interracial couples"
+  )
+
+```
+
+## Interracial Same-Sex Couples
+
+
+```{r}
+# papglb_status: if respondent is gay, lesbian, or bisexual 
+
+#Total: 114
+
+ plot_demographics(
+    respondent_race != partner_race, 
+    same_sex_couple != "different sex couple"
+  ) +
+  labs(
+    title = "Interracial same-sex couples"
+  )
+  
+```
+
+# Interracial Different-Sex Couples
+
+
+```{r}
+#398 total. 
+
+plot_demographics(
+    respondent_race != partner_race, 
+    same_sex_couple == "different sex couple"
+  ) +
+  labs(
+    title = "Interracial different sex couples"
+  )
+
+```
+
+
+# Intraracial Couples
+
+```{r}
+
+#3009 total. 
+
+plot_demographics(
+    respondent_race == partner_race, 
+    same_sex_couple != "different sex couple"
+  ) + 
+  labs(
+    title = "Same race couples" 
+  )
+```
+
+## Intraracial Different-Sex Couples
+
+
+```{r}
+#2218 total. 
+
+plot_demographics(
+    respondent_race == partner_race, 
+    same_sex_couple == "different sex couple"
+  ) +
+  labs(
+    title = "Same race diff sex couples"
+  )
+  
+  
+```
+
+## Intraracial Same-Sex Couples
+
+
+```{r}
+#358 total. 
+
+plot_demographics(
+    respondent_race == partner_race, 
+    same_sex_couple != "different sex couple"
+  ) +
+  labs(
+    title = "Same race same sex couples"
+  )
+```

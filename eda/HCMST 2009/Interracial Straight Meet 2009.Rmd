@@ -1,0 +1,158 @@
+---
+title: Interracial Straight Couples Meet
+author: Angela Zhao 
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+
+library(haven)
+
+# Parameters
+file_raw <- "/Users/angel/GitHub/dcl-2020-01/angela/c01-own/data/hcmst.rds"
+#===============================================================================
+
+# Code
+```
+
+## Data in its full glory
+
+```{r}
+#as_factor is the haven version
+
+data_meet <-
+  file_raw %>% 
+  read_dta() %>% 
+  mutate_if(is.labelled, as_factor) 
+
+glimpse(data_meet)
+
+```
+
+# Interracial Couples, Straight
+
+
+```{r}
+# papglb_status: if respondent is gay, lesbian, or bisexual 
+
+#398 total. 
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race != partner_race, 
+    same_sex_couple == "different sex couple"
+  ) %>% 
+  count(respondent_race, partner_race, sort = TRUE) 
+
+```
+
+## Met through Family or Friends
+
+There doesn't seem to be many who have met through friend or family introductions. 
+
+```{r}
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race != partner_race, 
+    same_sex_couple == "different sex couple", 
+    q24_met_online == "met online"
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  select(distinct_pair, q24_R_cowork:q24_P_neighbor) %>% 
+  pivot_longer(
+    cols = q24_R_cowork:q24_P_neighbor, 
+    values_to = "how_they_met", 
+    names_to = "where_they_met"
+  ) %>% 
+  filter(how_they_met == "Yes") %>% 
+  ggplot(aes(x = fct_infreq(where_they_met))) + 
+  geom_bar()
+
+```
+
+## Met through Internet
+
+38 met online, 348 met offline. 
+
+More than half met as internet dating. The rest are split mostly evenly among internet games, chats, and social networking. Only one couple met through the internet community. 
+  
+```{r}
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race != partner_race, 
+    same_sex_couple == "different sex couple", 
+    q24_met_online == "met online"
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  select(distinct_pair, q24_internet_dating:q24_internet_community) %>% 
+  pivot_longer(
+    cols = q24_internet_dating:q24_internet_community, 
+    values_to = "how_they_met", 
+    names_to = "where_they_met"
+  ) %>% 
+  filter(how_they_met == "Yes") %>% 
+  ggplot(aes(x = fct_infreq(where_they_met))) + 
+  geom_bar()
+
+```
+## Met through Public Places
+
+About a quarter to a third met through a bar or restauarant, and then customer relationship and school. Then, it is mostly split between college, a volunteer organization, and church. Finally, military is the least common place to meet someone. 
+
+```{r}
+
+data_meet %>% 
+  filter(
+    qflag != "no spouse or partner or otherwise unqualified", 
+    respondent_race != partner_race, 
+    same_sex_couple == "different sex couple", 
+  ) %>% 
+  mutate(
+    distinct_pair = 
+      str_c(
+        pmin(as.character(respondent_race), as.character(partner_race)), 
+        "-", 
+        pmax(as.character(respondent_race), as.character(partner_race))
+      )
+  ) %>% 
+  select(distinct_pair, q24_school:q24_bar_restaurant) %>% 
+  pivot_longer(
+    cols = q24_school:q24_bar_restaurant, 
+    values_to = "how_they_met", 
+    names_to = "where_they_met"
+  ) %>% 
+  filter(how_they_met == "Yes") %>% 
+  ggplot(aes(x = fct_infreq(where_they_met))) + 
+  geom_bar()
+
+```
+
+

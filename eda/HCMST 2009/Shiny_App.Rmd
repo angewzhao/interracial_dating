@@ -1,0 +1,19 @@
+---
+title: "Building a Shiny App"
+author: "Angela Zhao"
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, dpi = 500)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+library(shiny)
+```
